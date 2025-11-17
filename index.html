@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de QR Code</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Estilo/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gerador de QR Code</h1>
+            <p>Simples, rápido e profissional</p>
+        </div>
+
+        <div class="input-card">
+            <div class="input-group">
+                <label for="qrText">URL ou texto:</label>
+                <input type="text" id="qrText" placeholder="https://seusite.com.br" value="">
+            </div>
+
+            <div class="button-group">
+                <button class="btn-generate" onclick="generateQRCode()">
+                    Gerar QR Code
+                </button>
+                <button class="btn-print" id="printBtn" onclick="window.print()">
+                    Imprimir
+                </button>
+                <button class="btn-download" id="downloadBtn" onclick="downloadQRCode()">
+                    Baixar Imagem
+                </button>
+            </div>
+
+            <div class="info-text">
+                Digite a URL ou texto que deseja converter em QR Code
+            </div>
+        </div>
+
+        <div class="qrcode-preview" id="qrcodePreview">
+            <h3>Seu QR Code</h3>
+            <div id="qrcode"></div>
+            <div class="qrcode-url" id="qrcodeUrl"></div>
+        </div>
+    </div>
+<script src="JavaScript/index.js"></script>
+</body>
+</html>
