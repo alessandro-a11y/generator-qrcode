@@ -1,4 +1,4 @@
-       * {
+   * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -8,41 +8,42 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #f5f5f5;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 20px 15px;
         }
 
         .container {
             max-width: 600px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
         }
 
         .header h1 {
-            font-size: 2em;
+            font-size: 1.5em;
             font-weight: 600;
             color: #1a1a1a;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .header p {
             color: #666;
-            font-size: 1em;
+            font-size: 0.9em;
         }
 
         .input-card {
             background: white;
-            padding: 40px;
+            padding: 25px 20px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .input-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .input-group label {
@@ -71,20 +72,22 @@
 
         .button-group {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         button {
-            padding: 12px 28px;
+            padding: 12px 24px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
             transition: all 0.2s ease;
+            flex: 1;
+            min-width: 120px;
         }
 
         .btn-generate {
@@ -117,7 +120,7 @@
 
         .qrcode-preview {
             background: white;
-            padding: 40px;
+            padding: 25px 15px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -131,16 +134,25 @@
         .qrcode-preview h3 {
             color: #333;
             margin-bottom: 20px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: 500;
         }
 
         #qrcode {
             display: inline-block;
-            padding: 20px;
+            padding: 15px;
             background: #fafafa;
             border-radius: 8px;
             border: 1px solid #e0e0e0;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        #qrcode canvas,
+        #qrcode img {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block;
         }
 
         .qrcode-url {
@@ -177,19 +189,38 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+            }
+
             .header h1 {
-                font-size: 1.6em;
+                font-size: 1.3em;
+            }
+
+            .header p {
+                font-size: 0.85em;
             }
 
             .input-card {
-                padding: 25px;
+                padding: 20px 15px;
             }
 
             .button-group {
                 flex-direction: column;
+                gap: 10px;
             }
 
             button {
                 width: 100%;
+                flex: none;
+                min-width: unset;
+            }
+
+            .qrcode-preview {
+                padding: 20px 10px;
+            }
+
+            #qrcode {
+                padding: 10px;
             }
         }
